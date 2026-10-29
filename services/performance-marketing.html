@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18470523422"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18470523422');
+    </script> 
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Marketing & Analytics — Radhika Barot</title>
+    <meta name="description" content="Full-funnel performance marketing, Google Analytics 4 (GA4), GTM server-side tracking, Looker Studio dashboards, and multi-touch attribution by Radhika Barot." />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Performance Marketing & Analytics — Radhika Barot" />
+    <meta property="og:description" content="Data-driven performance marketing with server-side telemetry and custom Looker dashboards." />
+    <meta property="og:image" content="/assets/images/service-performance-marketing.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png" />
+    
+    <!-- Early Theme Initialization -->
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('radhika-theme');
+          if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/services.css" />
+  </head>
+  <body>
+    <!-- Background Ambient Glow -->
+    <div class="bg-ambient-noise" aria-hidden="true"></div>
+    <div class="bg-radial-glow" aria-hidden="true"></div>
+    <div class="bg-radial-glow-left" aria-hidden="true"></div>
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header id="navbar">
+      <div class="container nav-container">
+        <a href="/index.html#hero" class="nav-logo" aria-label="Radhika Barot Home">
+          <div class="nav-logo-icon">R<span>B</span></div>
+          <div class="nav-logo-text">RADHIKA<span>.</span></div>
+        </a>
+
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="/index.html#about" class="nav-link">ABOUT</a></li>
+            <li><a href="/index.html#expertise" class="nav-link">EXPERTISE</a></li>
+            <li><a href="/index.html#work" class="nav-link">WORK</a></li>
+            <li><a href="/index.html#process" class="nav-link">PROCESS</a></li>
+            <li><a href="/index.html#services" class="nav-link">SERVICES</a></li>
+            <li><a href="/index.html#contact" class="nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-desktop" aria-label="Toggle theme">
+            <svg class="theme-toggle-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="theme-toggle-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <a href="#inquiry" class="btn btn-primary">
+            <span>GET IN TOUCH</span>
+            <span class="arrow">↗</span>
+          </a>
+          <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu-links">
+        <li><a href="/index.html#hero" class="mobile-menu-link">HOME</a></li>
+        <li><a href="/index.html#about" class="mobile-menu-link">ABOUT</a></li>
+        <li><a href="/index.html#work" class="mobile-menu-link">WORK</a></li>
+        <li><a href="/index.html#process" class="mobile-menu-link">PROCESS</a></li>
+        <li><a href="/index.html#services" class="mobile-menu-link">SERVICES</a></li>
+        <li><a href="/index.html#contact" class="mobile-menu-link">CONTACT</a></li>
+      </ul>
+      <a href="#inquiry" class="btn btn-primary">
+        <span>GET STARTED ↗</span>
+      </a>
+    </div>
+
+    <main>
+      <!-- ==================================================
+           HERO SECTION
+           ================================================== -->
+      <section class="service-page-header">
+        <div class="container">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="/index.html#services">Services</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Performance Marketing</span>
+          </nav>
+
+          <div class="service-hero-grid">
+            <div class="service-hero-content">
+              <div class="service-hero-eyebrow">
+                <span>05. FULL-FUNNEL ATTRIBUTION &amp; ANALYTICS</span>
+              </div>
+              <h1 class="service-hero-title">
+                Growth Engineered by Real Data, Not Guesswork.
+              </h1>
+              <p class="service-hero-desc">
+                Unify your marketing channels into a single source of truth. Server-side Google Tag Manager, custom GA4 conversion events, Looker Studio executive dashboards, and multi-touch attribution modeling that shows which ad dollars drive actual profit.
+              </p>
+              <div class="service-hero-cta-group">
+                <a href="#inquiry" class="btn btn-primary">
+                  <span>AUDIT YOUR TELEMETRY</span>
+                  <span class="arrow">↗</span>
+                </a>
+                <a href="#analytics-preview" class="btn btn-secondary">
+                  <span>VIEW LIVE DASHBOARD</span>
+                  <span class="arrow">↓</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="service-hero-visual">
+              <img 
+                src="/assets/images/service-performance-marketing.jpg" 
+                alt="Performance Marketing Analytics by Radhika Barot" 
+                class="service-hero-img"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <!-- KPI Strip -->
+          <div class="kpi-strip">
+            <div class="kpi-item">
+              <div class="kpi-value">100%</div>
+              <div class="kpi-label">Server Signal Accuracy</div>
+              <div class="kpi-subtext">First-party server tracking immune to ad-blockers</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-value">5.2x</div>
+              <div class="kpi-label">Blended Portfolio ROAS</div>
+              <div class="kpi-subtext">Holistic marketing efficiency ratio across all paid channels</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-value">7.4x</div>
+              <div class="kpi-label">LTV to CAC Multiple</div>
+              <div class="kpi-subtext">Scaling profitable channels while killing underperformers</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-value">Real-Time</div>
+              <div class="kpi-label">Looker Studio Sync</div>
+              <div class="kpi-subtext">Zero waiting for monthly PDFs; 24/7 live data portal</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           VISUAL SHOWCASE: LIVE DASHBOARD MOCKUP
+           ================================================== -->
+      <section class="visual-showcase-section" id="analytics-preview">
+        <div class="container">
+          <div class="section-label">LIVE DASHBOARD PREVIEW</div>
+          <h2 class="section-title">Your Unified Growth Command Center.</h2>
+          <p class="section-subtitle">Simulated executive Looker Studio dashboard tracking real-time traffic, blended ROAS, and CAC.</p>
+
+          <div class="visual-showcase-grid">
+            <!-- Simulated Looker Studio Live Dashboard Card -->
+            <div class="ad-preview-card">
+              <div class="ad-preview-header">
+                <div class="ad-preview-brand">
+                  <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                  <span class="ad-preview-brand-name">Omnichannel Executive Dashboard</span>
+                </div>
+                <span class="ad-preview-badge-status">● LIVE GA4 SYNC</span>
+              </div>
+
+              <div class="ad-preview-media">
+                <img src="/assets/images/service-performance-marketing.jpg" alt="Live Analytics Command Center" />
+                <div class="ad-preview-overlay-badge">Looker Studio • 24/7 Live Portal</div>
+              </div>
+
+              <!-- Multi-Touch Attribution Bar -->
+              <div style="background: var(--secondary-dark); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;">
+                  <span>Attribution Model:</span>
+                  <strong style="color: var(--white);">Data-Driven Multi-Touch</strong>
+                </div>
+                <div style="display: flex; height: 10px; border-radius: 999px; overflow: hidden;">
+                  <div style="background: #3b82f6; width: 30%;" title="Search / Google (30%)"></div>
+                  <div style="background: #ef4444; width: 45%;" title="Meta Ads (45%)"></div>
+                  <div style="background: #10b981; width: 25%;" title="Organic / Direct (25%)"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--muted); margin-top: 6px;">
+                  <span>🔵 Google: 30%</span>
+                  <span>🔴 Meta Ads: 45%</span>
+                  <span>🟢 Direct: 25%</span>
+                </div>
+              </div>
+
+              <div class="ad-preview-social">
+                <div class="ad-social-item">⚡ Sub-Second Server GTM Sync</div>
+                <div class="ad-social-item">📊 E-Commerce Purchase Deduplication</div>
+              </div>
+            </div>
+
+            <!-- Telemetry Metrics Card -->
+            <div class="campaign-stats-card">
+              <div>
+                <div class="stats-card-header">
+                  <h3 class="stats-card-title">Attribution Telemetry</h3>
+                  <span class="stats-card-live">Verified Revenue</span>
+                </div>
+
+                <div class="stats-metrics-grid">
+                  <div class="stat-metric-box">
+                    <span class="stat-metric-num">$64,800</span>
+                    <span class="stat-metric-name">Attributed Revenue</span>
+                    <span class="stat-metric-diff">+54% MoM Growth</span>
+                  </div>
+                  <div class="stat-metric-box">
+                    <span class="stat-metric-num">5.2x</span>
+                    <span class="stat-metric-name">Marketing Efficiency Ratio</span>
+                    <span class="stat-metric-diff">Healthy Scalable Ratio</span>
+                  </div>
+                  <div class="stat-metric-box">
+                    <span class="stat-metric-num">$24.80</span>
+                    <span class="stat-metric-name">Blended Customer CAC</span>
+                    <span class="stat-metric-diff">Target: &lt; $35</span>
+                  </div>
+                  <div class="stat-metric-box">
+                    <span class="stat-metric-num">$184</span>
+                    <span class="stat-metric-name">90-Day Customer LTV</span>
+                    <span class="stat-metric-diff">7.4x LTV:CAC Multiple</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integration Badges -->
+              <div style="background: var(--secondary-dark); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px;">
+                <strong style="color: var(--white); font-size: 0.82rem; display: block; margin-bottom: 8px;">Telemetry Infrastructure:</strong>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <span style="background: rgba(255,43,43,0.1); color: var(--red); font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;">GA4 E-Commerce</span>
+                  <span style="background: rgba(255,43,43,0.1); color: var(--red); font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;">GTM Server Container</span>
+                  <span style="background: rgba(255,43,43,0.1); color: var(--red); font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;">Looker Studio</span>
+                  <span style="background: rgba(255,43,43,0.1); color: var(--red); font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;">Shopify / Stripe Webhooks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual 3-Stage Tracking Architecture -->
+          <div class="visual-funnel-wrapper">
+            <div class="visual-funnel-header">
+              <h3 class="visual-funnel-title">The Server-Side Tracking Architecture</h3>
+              <p class="visual-funnel-subtitle">How every customer action is captured without iOS or ad-blocker signal loss.</p>
+            </div>
+
+            <div class="visual-funnel-steps">
+              <div class="funnel-step-card">
+                <div class="funnel-step-badge">Component 01 • First-Party Capture</div>
+                <h4 class="funnel-step-name">Client-Side GTM DataLayer</h4>
+                <p class="funnel-step-desc">Captures clicks, form fills, video views, and purchases cleanly from your website.</p>
+                <span class="funnel-step-kpi">Sub-100ms Latency</span>
+              </div>
+
+              <div class="funnel-step-card">
+                <div class="funnel-step-badge">Component 02 • Cloud Server Proxy</div>
+                <h4 class="funnel-step-name">GTM Server Container</h4>
+                <p class="funnel-step-desc">Deduplicates events, strips PII compliance data, and routes directly to ad platforms.</p>
+                <span class="funnel-step-kpi">100% iOS Recovery</span>
+              </div>
+
+              <div class="funnel-step-card">
+                <div class="funnel-step-badge">Component 03 • Executive Intelligence</div>
+                <h4 class="funnel-step-name">Looker Studio Dashboard</h4>
+                <p class="funnel-step-desc">Unifies Meta, Google, TikTok, and Stripe into one visual live report with automated alerts.</p>
+                <span class="funnel-step-kpi">24/7 Real-Time Access</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           PROBLEM VS SOLUTION SECTION
+           ================================================== -->
+      <section class="comparison-section">
+        <div class="container">
+          <div class="section-label">PERFORMANCE ADVANTAGE</div>
+          <h2 class="section-title">Broken Analytics vs Full-Funnel Attribution.</h2>
+
+          <div class="comparison-grid">
+            <div class="comparison-card comparison-card-problem">
+              <div class="comparison-badge comparison-badge-problem">Without Radhika</div>
+              <h3 class="comparison-title">Flying Blind on Ad Spend</h3>
+              <ul class="comparison-points">
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                  <span>30-40% of conversion data lost due to iOS 14.5+ and browser ad-blockers</span>
+                </li>
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                  <span>Meta and Google claiming credit for the exact same sale (double attribution)</span>
+                </li>
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                  <span>Wasting hours manually exporting spreadsheets into confusing PDF slides</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="comparison-card comparison-card-solution">
+              <div class="comparison-badge comparison-badge-solution">With Radhika Barot</div>
+              <h3 class="comparison-title">Server-Side Unified Truth</h3>
+              <ul class="comparison-points">
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>First-party server GTM capturing 100% of purchase signals with deduplication</span>
+                </li>
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Data-driven multi-touch attribution showing exact channel contribution</span>
+                </li>
+                <li class="comparison-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>24/7 Looker Studio dashboard with automated Slack budget alerts</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           DELIVERABLES SECTION
+           ================================================== -->
+      <section class="deliverables-section" id="deliverables">
+        <div class="container">
+          <div class="section-label">CORE DELIVERABLES</div>
+          <h2 class="section-title">Performance Analytics Implementation.</h2>
+
+          <div class="deliverables-grid">
+            <div class="deliverable-card">
+              <div class="deliverable-num">01</div>
+              <h3 class="deliverable-title">Server-Side GTM Architecture</h3>
+              <p class="deliverable-desc">Custom cloud container setup handling Meta CAPI, Google Enhanced Conversions, and TikTok API.</p>
+              <div class="deliverable-features">
+                <div class="deliverable-feature-item">Event deduplication rules</div>
+                <div class="deliverable-feature-item">First-party cookie extension</div>
+                <div class="deliverable-feature-item">Sub-second cloud latency</div>
+              </div>
+            </div>
+
+            <div class="deliverable-card">
+              <div class="deliverable-num">02</div>
+              <h3 class="deliverable-title">GA4 E-Commerce Telemetry</h3>
+              <p class="deliverable-desc">Complete e-commerce event funnel setup tracking View Item, Add to Cart, Begin Checkout, and Purchase.</p>
+              <div class="deliverable-features">
+                <div class="deliverable-feature-item">Custom funnel exploration reports</div>
+                <div class="deliverable-feature-item">Cart abandonment diagnostics</div>
+                <div class="deliverable-feature-item">User lifetime value cohorts</div>
+              </div>
+            </div>
+
+            <div class="deliverable-card">
+              <div class="deliverable-num">03</div>
+              <h3 class="deliverable-title">Custom Looker Studio Portal</h3>
+              <p class="deliverable-desc">Executive dashboard connecting Google Ads, Meta Ads, GA4, and Shopify into one cohesive view.</p>
+              <div class="deliverable-features">
+                <div class="deliverable-feature-item">Blended ROAS &amp; MER tracking</div>
+                <div class="deliverable-feature-item">Live spend vs revenue graphs</div>
+                <div class="deliverable-feature-item">Automated weekly Slack summaries</div>
+              </div>
+            </div>
+
+            <div class="deliverable-card">
+              <div class="deliverable-num">04</div>
+              <h3 class="deliverable-title">LTV &amp; CAC Unit Economics</h3>
+              <p class="deliverable-desc">Identify which marketing channels produce repeat customers with highest lifetime profitability.</p>
+              <div class="deliverable-features">
+                <div class="deliverable-feature-item">Cohort retention analysis</div>
+                <div class="deliverable-feature-item">Payback period modeling</div>
+                <div class="deliverable-feature-item">Budget reallocation insights</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           CASE STUDY SPOTLIGHT
+           ================================================== -->
+      <section class="service-case-study">
+        <div class="container">
+          <div class="section-label">PROVEN IMPACT</div>
+          <h2 class="section-title">Case Study Spotlight.</h2>
+
+          <div class="case-study-card">
+            <div class="case-study-content">
+              <div class="case-study-badge">OMNICHANNEL E-COMMERCE</div>
+              <h3 class="case-study-title">Unifying $1.2M in Annual Spend with Server-Side Attribution</h3>
+              <p class="case-study-summary">
+                A multi-channel DTC retailer was struggling with conflicting reports between Shopify, Meta, and Google Ads, over-reporting sales by 35%. By deploying a Google Tag Manager server container, establishing single-source attribution, and building an executive Looker Studio dashboard, they eliminated double-counting and reallocated $18,000/mo to their highest-ROI campaigns.
+              </p>
+              <div class="case-study-tags">
+                <span class="case-study-tag">Server GTM Deployed</span>
+                <span class="case-study-tag">Looker Studio Live</span>
+                <span class="case-study-tag">Zero Double Counting</span>
+              </div>
+            </div>
+
+            <div class="case-study-stats">
+              <div class="case-study-stat-item">
+                <div class="case-study-stat-num">100%</div>
+                <div class="case-study-stat-label">Purchase Event Match</div>
+              </div>
+              <div class="case-study-stat-item">
+                <div class="case-study-stat-num">+$18K</div>
+                <div class="case-study-stat-label">Monthly Waste Saved</div>
+              </div>
+              <div class="case-study-stat-item">
+                <div class="case-study-stat-num">5.2x</div>
+                <div class="case-study-stat-label">Verified Blended ROAS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           PRICING SECTION
+           ================================================== -->
+      <section class="pricing-section">
+        <div class="container">
+          <div class="section-label">PACKAGES</div>
+          <h2 class="section-title">Analytics &amp; Tracking Plans.</h2>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-badge">ONE-TIME SETUP</div>
+              <h3 class="pricing-tier-name">Telemetry Sprint</h3>
+              <div class="pricing-amount">$699<span>/one-time</span></div>
+              <p class="pricing-desc">Complete GA4 audit, Google Tag Manager cleanup, and custom conversion event tracking.</p>
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">Full GA4 property configuration</li>
+                <li class="pricing-feature-item">GTM container cleanup &amp; events</li>
+                <li class="pricing-feature-item">Form submit &amp; purchase triggers</li>
+                <li class="pricing-feature-item">Event validation &amp; QA report</li>
+              </ul>
+              <a href="#inquiry" class="btn btn-secondary">GET SPRINT ↗</a>
+            </div>
+
+            <div class="pricing-card pricing-card-featured">
+              <div class="pricing-badge pricing-badge-featured">MOST POPULAR</div>
+              <h3 class="pricing-tier-name">Server-Side + Dashboard</h3>
+              <div class="pricing-amount">$1,499<span>/one-time</span></div>
+              <p class="pricing-desc">Full GTM Server container setup with Meta CAPI, Google Enhanced Conversions, and Looker Studio.</p>
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">Server-Side GTM cloud setup</li>
+                <li class="pricing-feature-item">Meta CAPI &amp; Google Enhanced Conversions</li>
+                <li class="pricing-feature-item">Custom Looker Studio executive dashboard</li>
+                <li class="pricing-feature-item">Cross-channel attribution modeling</li>
+                <li class="pricing-feature-item">30 days post-launch data monitoring</li>
+              </ul>
+              <a href="#inquiry" class="btn btn-primary">DEPLOY TELEMETRY ↗</a>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-badge">ONGOING ADVISORY</div>
+              <h3 class="pricing-tier-name">Retained Growth Partner</h3>
+              <div class="pricing-amount">$1,299<span>/month</span></div>
+              <p class="pricing-desc">Continuous telemetry monitoring, weekly attribution reporting, and channel reallocation guidance.</p>
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">Ongoing server-side telemetry maintenance</li>
+                <li class="pricing-feature-item">Weekly executive Looker Studio Loom checks</li>
+                <li class="pricing-feature-item">Unit economics &amp; cohort LTV modeling</li>
+                <li class="pricing-feature-item">Custom SQL / BigQuery data exports</li>
+                <li class="pricing-feature-item">Direct priority Slack access</li>
+              </ul>
+              <a href="#inquiry" class="btn btn-secondary">PARTNER WITH US ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           INQUIRY FORM
+           ================================================== -->
+      <section class="service-inquiry-section" id="inquiry">
+        <div class="container">
+          <div class="inquiry-grid">
+            <div class="inquiry-info">
+              <div class="section-label">GET STARTED</div>
+              <h2 class="section-title">Ready to Fix Your Conversion Telemetry?</h2>
+              <p class="section-subtitle">
+                Schedule a consultation with Radhika Barot to audit your tracking setup and uncover lost ad signals.
+              </p>
+              <div class="inquiry-points">
+                <div class="inquiry-point-item">
+                  <span class="inquiry-point-icon">✓</span>
+                  <span>1-on-1 analytics strategy consultation with Radhika</span>
+                </div>
+                <div class="inquiry-point-item">
+                  <span class="inquiry-point-icon">✓</span>
+                  <span>Complimentary GA4 and Pixel health check</span>
+                </div>
+                <div class="inquiry-point-item">
+                  <span class="inquiry-point-icon">✓</span>
+                  <span>Guaranteed response within 24 hours</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="inquiry-form-card">
+              <h3 class="inquiry-form-title">Request Telemetry Audit</h3>
+              <p class="inquiry-form-subtitle">Fill in your details below to schedule your consultation.</p>
+
+              <form action="/thank-you.html" method="GET" class="service-form" id="service-inquiry-form">
+                <input type="hidden" name="service" value="Performance Marketing & Analytics" />
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Full Name</label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Alex Mercer" required />
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email Address</label>
+                  <input type="email" id="client-email" name="email" class="form-input" placeholder="alex@company.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="current-platform" class="form-label">Primary Website Platform</label>
+                  <select id="current-platform" name="platform" class="form-select" required>
+                    <option value="" disabled selected>Select your platform</option>
+                    <option value="Shopify">Shopify / Shopify Plus</option>
+                    <option value="WordPress / WooCommerce">WordPress / WooCommerce</option>
+                    <option value="Custom Web App (React / Next.js)">Custom Web App (React / Next.js)</option>
+                    <option value="Webflow / Framer">Webflow / Framer</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="project-website" class="form-label">Website URL</label>
+                  <input type="url" id="project-website" name="website" class="form-input" placeholder="https://yourstore.com" />
+                </div>
+                <div class="form-group">
+                  <label for="client-goals" class="form-label">Primary Tracking Challenge</label>
+                  <textarea id="client-goals" name="message" class="form-textarea" rows="3" placeholder="Lost conversion data after iOS, inconsistent ROAS numbers, need Looker dashboard..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  <span>SUBMIT INQUIRY ↗</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           CROSS-SERVICES NAVIGATION
+           ================================================== -->
+      <section class="cross-services-section">
+        <div class="container">
+          <div class="section-label">MORE DISCIPLINES</div>
+          <h2 class="section-title">Apply Data to Paid Channels.</h2>
+
+          <div class="cross-services-grid">
+            <a href="/services/meta-ads.html" class="cross-service-card">
+              <span class="cross-service-num">01</span>
+              <h3 class="cross-service-name">Meta Ads</h3>
+              <p class="cross-service-desc">Feed server-side CAPI data into Meta's algorithmic bidding engine.</p>
+              <span class="cross-service-link">View Service ↗</span>
+            </a>
+            <a href="/services/google-ads.html" class="cross-service-card">
+              <span class="cross-service-num">02</span>
+              <h3 class="cross-service-name">Google Ads</h3>
+              <p class="cross-service-desc">Deploy Enhanced Conversions to maximize search bidding efficiency.</p>
+              <span class="cross-service-link">View Service ↗</span>
+            </a>
+            <a href="/services/lead-generation.html" class="cross-service-card">
+              <span class="cross-service-num">03</span>
+              <h3 class="cross-service-name">Lead Gen Funnels</h3>
+              <p class="cross-service-desc">Track step-by-step drop-offs across multi-step quiz landers.</p>
+              <span class="cross-service-link">View Service ↗</span>
+            </a>
+            <a href="/services/local-seo-gmb.html" class="cross-service-card">
+              <span class="cross-service-num">06</span>
+              <h3 class="cross-service-name">Local SEO</h3>
+              <p class="cross-service-desc">Track inbound phone calls and local Google Maps directions.</p>
+              <span class="cross-service-link">View Service ↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">RADHIKA<span>.</span></div>
+            <p class="footer-desc">
+              Coder, Digital Marketer &amp; Video Editor building digital growth systems.
+            </p>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Services</div>
+            <ul class="footer-links">
+              <li><a href="/services/meta-ads.html" class="footer-link">Meta Ads</a></li>
+              <li><a href="/services/google-ads.html" class="footer-link">Google Ads</a></li>
+              <li><a href="/services/lead-generation.html" class="footer-link">Lead Generation</a></li>
+              <li><a href="/services/social-media.html" class="footer-link">Social Media</a></li>
+              <li><a href="/services/performance-marketing.html" class="footer-link">Performance Marketing</a></li>
+              <li><a href="/services/local-seo-gmb.html" class="footer-link">Local SEO</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Connect</div>
+            <ul class="footer-links">
+              <li><a href="mailto:barotradhika8@gmail.com" class="footer-link">barotradhika8@gmail.com</a></li>
+              <li><a href="/index.html#contact" class="footer-link">Get in Touch</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Radhika Barot. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
