@@ -516,6 +516,7 @@ function initProjectModal() {
     if (modalImg) {
       modalImg.src = data.image;
       modalImg.alt = `${data.title} Case Study Preview`;
+      modalImg.title = `${data.title} Case Study - Radhika Barot`;
     }
     if (modalCategory) modalCategory.textContent = `${data.number} // ${data.category}`;
     if (modalTitle) modalTitle.textContent = data.title;
