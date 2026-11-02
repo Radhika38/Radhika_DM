@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 00. Homepage: Digital Marketing Services in Ahmedabad -->
+  <url>
+    <loc>https://radhikadm.netlify.app/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/Radhika_barot.jpeg</image:loc>
+      <image:title>Radhika Barot - Digital Marketing Specialist in Ahmedabad</image:title>
+      <image:caption>Radhika Barot - Digital Marketing Consultant, Coder and Video Editor in Ahmedabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-local-seo.jpg</image:loc>
+      <image:title>Local SEO &amp; Google Maps Marketing in Ahmedabad - Radhika Barot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-google-ads.jpg</image:loc>
+      <image:title>Google Ads PPC Campaign Strategy &amp; Management - Radhika Barot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-meta-ads.jpg</image:loc>
+      <image:title>Meta Ads Facebook &amp; Instagram Paid Advertising - Radhika Barot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-social-media.jpg</image:loc>
+      <image:title>Social Media Marketing &amp; Short-Form Video Reels - Radhika Barot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-lead-generation.jpg</image:loc>
+      <image:title>Lead Generation &amp; High-Converting Sales Funnels - Radhika Barot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/project-ecommerce.jpg</image:loc>
+      <image:title>Website Design &amp; Web Development Services - Radhika Barot</image:title>
+    </image:image>
+  </url>
+
+  <!-- 01. Local SEO & Google Business Profile (GMB) -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/local-seo-gmb.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-local-seo.jpg</image:loc>
+      <image:title>Local SEO &amp; Google Maps Marketing in Ahmedabad - Radhika Barot</image:title>
+      <image:caption>Rank #1 in Google Maps and the Local 3-Pack for local Ahmedabad business search queries.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 02. Google Ads (PPC) Campaign Strategy -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/google-ads.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-google-ads.jpg</image:loc>
+      <image:title>Google Ads PPC Campaign Strategy &amp; Management - Radhika Barot</image:title>
+      <image:caption>High-intent Google Ads PPC search advertising, Performance Max, and conversion tracking.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 03. Meta Ads (Facebook & Instagram) -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/meta-ads.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-meta-ads.jpg</image:loc>
+      <image:title>Meta Ads Facebook &amp; Instagram Paid Advertising - Radhika Barot</image:title>
+      <image:caption>High-converting Facebook &amp; Instagram campaigns driven by short-form video hooks and CAPI tracking.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 04. Social Media Marketing & Video Reels -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/social-media.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-social-media.jpg</image:loc>
+      <image:title>Social Media Marketing &amp; Short-Form Video Reels - Radhika Barot</image:title>
+      <image:caption>Viral short-form video reels production and structured 30-day content calendar systems.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 05. Lead Generation & Sales Funnels -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/lead-generation.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-lead-generation.jpg</image:loc>
+      <image:title>Lead Generation &amp; High-Converting Sales Funnels - Radhika Barot</image:title>
+      <image:caption>High-speed landing pages, qualifying quizzes, and automated lead routing for sales teams.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 06. Performance Marketing & Analytics -->
+  <url>
+    <loc>https://radhikadm.netlify.app/services/performance-marketing.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://radhikadm.netlify.app/assets/images/service-performance-marketing.jpg</image:loc>
+      <image:title>Performance Marketing &amp; Attribution Analytics - Radhika Barot</image:title>
+      <image:caption>Multi-touch attribution, GA4 server-side tagging, and 24/7 Looker Studio reporting.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 07. Thank You / Lead Confirmation -->
+  <url>
+    <loc>https://radhikadm.netlify.app/thank-you.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
