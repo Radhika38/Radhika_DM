@@ -1,5 +1,39 @@
+# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Radhika Barot — Digital Marketing Services & Portfolio
+# Website: https://radhikadm.netlify.app
+
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /services/
+Disallow: /thank-you.html
 
-# Sitemaps
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /services/
+Disallow: /thank-you.html
+
+# Googlebot-Image crawler
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/logo/
+Allow: /assets/svg/
+
+# Bingbot crawler
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /services/
+Disallow: /thank-you.html
+
+# XML Sitemap and Host declarations
 Sitemap: https://radhikadm.netlify.app/sitemap.xml
+Host: radhikadm.netlify.app

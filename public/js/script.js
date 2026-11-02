@@ -1060,26 +1060,91 @@ function initCardIntersectionObserver() {
 /* ==================================================
    SCROLL REVEAL (INTERSECTION OBSERVER)
    ================================================== */
-function initScrollReveal() {
-  const elements = document.querySelectorAll('.reveal-fade-up:not(.expertise-card):not(.project-card)');
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach((el) => el.classList.add('revealed'));
+ function initScrollReveal() {
+  const isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const elements = document.querySelectorAll('.reveal-fade-up');
+
+  if (!elements.length) return;
+
+  // 1. If user prefers reduced motion or IntersectionObserver is unsupported, reveal immediately
+  if (isReducedMotion || !('IntersectionObserver' in window)) {
+    elements.forEach((el) => {
+      el.classList.add('revealed');
+      el.style.willChange = 'auto';
+    });
     return;
   }
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  // 2. Automatically compute dynamic staggered cascades for grid & section cards
+  const gridSelectors = [
+    '.services-hub-grid',
+    '.why-grid',
+    '.portfolio-modern-grid',
+    '.process-cards-grid',
+    '.testimonials-grid',
+    '.contact-wrapper',
+    '.hero-grid'
+  ];
+
+  gridSelectors.forEach((selector) => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    // Direct items or cards within the container
+    const items = container.querySelectorAll(
+      ':scope > .reveal-fade-up, :scope > article.reveal-fade-up, :scope > div.reveal-fade-up'
+    );
+
+    items.forEach((item, index) => {
+      // Respect explicit inline or data attributes
+      if (!item.style.getPropertyValue('--reveal-delay') && !item.hasAttribute('data-delay')) {
+        const staggerDelay = (index % 6) * 90; // 0ms, 90ms, 180ms, 270ms...
+        item.style.setProperty('--reveal-delay', `${staggerDelay}ms`);
+      }
+    });
+  });
+
+  // Support explicit data-delay attribute (e.g. data-delay="150")
+  elements.forEach((el) => {
+    const customDelay = el.getAttribute('data-delay');
+    if (customDelay) {
+      el.style.setProperty('--reveal-delay', `${customDelay}ms`);
+    }
+  });
+
+  // 3. High-performance IntersectionObserver with smooth anticipation margins
+  const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        obs.unobserve(entry.target);
+        const target = entry.target;
+
+        // Trigger dynamic viewport entrance
+        target.classList.add('revealed');
+
+        // Once transition ends, restore will-change to auto to free up memory
+        const handleTransitionEnd = (e) => {
+          if (e.target === target && (e.propertyName === 'transform' || e.propertyName === 'opacity')) {
+            target.style.willChange = 'auto';
+            target.classList.add('reveal-completed');
+            target.removeEventListener('transitionend', handleTransitionEnd);
+          }
+        };
+        target.addEventListener('transitionend', handleTransitionEnd);
+
+        // Stop observing once animated
+        obs.unobserve(target);
       }
     });
   }, {
+    root: null,
     rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
+    threshold: 0.08
   });
 
-  elements.forEach((el) => observer.observe(el));
+  // 4. Observe all target elements
+  elements.forEach((el) => {
+    revealObserver.observe(el);
+  });
 }
 
 /* ==================================================
