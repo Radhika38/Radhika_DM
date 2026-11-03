@@ -1,15 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18470523422"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18470523422');
-    </script> 
+    <!-- Preconnect & DNS-Prefetch for deferred analytics -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin /> 
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -91,20 +87,63 @@
     }
     </script>
 
-    <!-- Meta Pixel Code -->
+    <!-- Performance Optimized Deferred Analytics (Google Ads / GTM + Meta Pixel) -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1048726811492659');
-      fbq('track', 'PageView');
+      // Global stubs so tracking calls queue safely without error before script execution
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];
+      }(window, document, 'script');
+
+      // Deferred Analytics Loader: loads after first user interaction or idle callback
+      (function() {
+        var analyticsLoaded = false;
+        function initAnalytics() {
+          if (analyticsLoaded) return;
+          analyticsLoaded = true;
+
+          // Remove interaction event listeners
+          var events = ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'];
+          events.forEach(function(evt) {
+            window.removeEventListener(evt, initAnalytics, { passive: true });
+          });
+
+          // 1. Google Tag Manager / Google Ads
+          var gtmScript = document.createElement('script');
+          gtmScript.async = true;
+          gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18470523422';
+          document.head.appendChild(gtmScript);
+          gtag('config', 'AW-18470523422');
+
+          // 2. Meta Pixel Code
+          var fbScript = document.createElement('script');
+          fbScript.async = true;
+          fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(fbScript);
+          fbq('init', '1048726811492659');
+          fbq('track', 'PageView');
+        }
+
+        // Trigger immediately on first user touch/scroll/key interaction
+        var events = ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'];
+        events.forEach(function(evt) {
+          window.addEventListener(evt, initAnalytics, { passive: true, once: true });
+        });
+
+        // Fallback for idle/bot inspection after initial page render
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() { setTimeout(initAnalytics, 3000); }, { timeout: 4500 });
+        } else {
+          setTimeout(initAnalytics, 3500);
+        }
+      })();
     </script>
-    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <!-- Meta Pixel NoScript Fallback -->
@@ -279,13 +318,19 @@
             <div class="hero-portrait-card" id="hero-portrait" title="Radhika Barot - Digital Marketing Consultant in Ahmedabad">
               <div class="hero-portrait-glow-ring" aria-hidden="true"></div>
               <div class="hero-portrait-inner">
-                <img 
-                  src="assets/images/Radhika_barot.jpeg" 
-                  alt="Radhika Barot - Digital Marketing Consultant in Ahmedabad" 
-                  title="Radhika Barot - Digital Marketing Specialist in Ahmedabad"
-                  class="hero-portrait-img"
-                  fetchpriority="high"
-                />
+                <picture>
+                  <source srcset="assets/images/Radhika_barot.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/Radhika_barot.jpeg" 
+                    alt="Radhika Barot - Digital Marketing Consultant in Ahmedabad" 
+                    title="Radhika Barot - Digital Marketing Specialist in Ahmedabad"
+                    class="hero-portrait-img"
+                    width="480"
+                    height="640"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hero-portrait-gradient-overlay" aria-hidden="true"></div>
                 <div class="hero-portrait-bottom-info">
                   <div>
@@ -330,13 +375,19 @@
             <!-- 01. SEO & Local SEO -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/service-local-seo.jpg" 
-                  alt="SEO & Local SEO Services in Ahmedabad by Radhika Barot" 
-                  title="Local SEO & Google Maps Marketing in Ahmedabad - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/service-local-seo.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/service-local-seo.jpg" 
+                    alt="SEO & Local SEO Services in Ahmedabad by Radhika Barot" 
+                    title="Local SEO & Google Maps Marketing in Ahmedabad - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -360,13 +411,19 @@
             <!-- 02. Google Ads (PPC) -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/service-google-ads.jpg" 
-                  alt="Google Ads PPC Marketing in Ahmedabad by Radhika Barot" 
-                  title="Google Ads PPC Campaign Strategy & Management - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/service-google-ads.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/service-google-ads.jpg" 
+                    alt="Google Ads PPC Marketing in Ahmedabad by Radhika Barot" 
+                    title="Google Ads PPC Campaign Strategy & Management - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -390,13 +447,19 @@
             <!-- 03. Meta Ads -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/service-meta-ads.jpg" 
-                  alt="Meta Ads Facebook & Instagram Marketing by Radhika Barot" 
-                  title="Meta Ads Facebook & Instagram Paid Advertising - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/service-meta-ads.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/service-meta-ads.jpg" 
+                    alt="Meta Ads Facebook & Instagram Marketing by Radhika Barot" 
+                    title="Meta Ads Facebook & Instagram Paid Advertising - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -420,13 +483,19 @@
             <!-- 04. Social Media Marketing -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/service-social-media.jpg" 
-                  alt="Social Media Marketing & Video Reels by Radhika Barot" 
-                  title="Social Media Marketing & Short-Form Video Reels - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/service-social-media.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/service-social-media.jpg" 
+                    alt="Social Media Marketing & Video Reels by Radhika Barot" 
+                    title="Social Media Marketing & Short-Form Video Reels - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -450,13 +519,19 @@
             <!-- 05. Lead Generation -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/service-lead-generation.jpg" 
-                  alt="Lead Generation & High Converting Funnels by Radhika Barot" 
-                  title="Lead Generation & High-Converting Sales Funnels - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/service-lead-generation.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/service-lead-generation.jpg" 
+                    alt="Lead Generation & High Converting Funnels by Radhika Barot" 
+                    title="Lead Generation & High-Converting Sales Funnels - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -480,13 +555,19 @@
             <!-- 06. Website Design & Development -->
             <article class="hub-service-card reveal-fade-up">
               <div class="hub-service-visual">
-                <img 
-                  src="assets/images/project-ecommerce.jpg" 
-                  alt="Website Design & Development by Radhika Barot" 
-                  title="Website Design & Web Development Services - Radhika Barot"
-                  class="hub-service-img" 
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="assets/images/project-ecommerce.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-ecommerce.jpg" 
+                    alt="Website Design & Development by Radhika Barot" 
+                    title="Website Design & Web Development Services - Radhika Barot"
+                    class="hub-service-img" 
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="hub-service-overlay"></div>
               </div>
               <div class="hub-service-body">
@@ -628,12 +709,18 @@
             <!-- 01. E-Commerce Website -->
             <article class="portfolio-modern-card reveal-fade-up">
               <div class="portfolio-img-box">
-                <img 
-                  src="assets/images/project-ecommerce.jpg" 
-                  alt="E-Commerce Website by Radhika Barot" 
-                  title="E-Commerce Responsive Web Design & UI - Radhika Barot"
-                  loading="lazy" 
-                />
+                <picture>
+                  <source srcset="assets/images/project-ecommerce.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-ecommerce.jpg" 
+                    alt="E-Commerce Website by Radhika Barot" 
+                    title="E-Commerce Responsive Web Design & UI - Radhika Barot"
+                    width="640"
+                    height="400"
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="portfolio-modern-card-body">
                 <div class="portfolio-badge-top">
@@ -659,12 +746,18 @@
             <!-- 02. Airline Booking System -->
             <article class="portfolio-modern-card reveal-fade-up">
               <div class="portfolio-img-box">
-                <img 
-                  src="assets/images/project-airline.jpg" 
-                  alt="Airline Booking System by Radhika Barot" 
-                  title="Airline Booking & Flight Reservation System - Radhika Barot"
-                  loading="lazy" 
-                />
+                <picture>
+                  <source srcset="assets/images/project-airline.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-airline.jpg" 
+                    alt="Airline Booking System by Radhika Barot" 
+                    title="Airline Booking & Flight Reservation System - Radhika Barot"
+                    width="640"
+                    height="400"
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="portfolio-modern-card-body">
                 <div class="portfolio-badge-top">
@@ -690,12 +783,18 @@
             <!-- 03. Gym Management System -->
             <article class="portfolio-modern-card reveal-fade-up">
               <div class="portfolio-img-box">
-                <img 
-                  src="assets/images/project-gym.jpg" 
-                  alt="Gym Management System by Radhika Barot" 
-                  title="Gym Management & Member Portal Web Application - Radhika Barot"
-                  loading="lazy" 
-                />
+                <picture>
+                  <source srcset="assets/images/project-gym.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-gym.jpg" 
+                    alt="Gym Management System by Radhika Barot" 
+                    title="Gym Management & Member Portal Web Application - Radhika Barot"
+                    width="640"
+                    height="400"
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="portfolio-modern-card-body">
                 <div class="portfolio-badge-top">
@@ -721,12 +820,18 @@
             <!-- 04. Social Media Auto Posting -->
             <article class="portfolio-modern-card reveal-fade-up">
               <div class="portfolio-img-box">
-                <img 
-                  src="assets/images/project-socialhub.jpg" 
-                  alt="Social Media Auto Posting Pipeline by Radhika Barot" 
-                  title="Social Media Automation & Scheduling Pipeline - Radhika Barot"
-                  loading="lazy" 
-                />
+                <picture>
+                  <source srcset="assets/images/project-socialhub.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-socialhub.jpg" 
+                    alt="Social Media Auto Posting Pipeline by Radhika Barot" 
+                    title="Social Media Automation & Scheduling Pipeline - Radhika Barot"
+                    width="640"
+                    height="400"
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="portfolio-modern-card-body">
                 <div class="portfolio-badge-top">
@@ -752,12 +857,18 @@
             <!-- 05. AiCruit -->
             <article class="portfolio-modern-card reveal-fade-up">
               <div class="portfolio-img-box">
-                <img 
-                  src="assets/images/project-aicruit.jpg" 
-                  alt="AiCruit AI Job Matching Android App by Radhika Barot" 
-                  title="AiCruit AI Resume & Job Matching Mobile App - Radhika Barot"
-                  loading="lazy" 
-                />
+                <picture>
+                  <source srcset="assets/images/project-aicruit.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/project-aicruit.jpg" 
+                    alt="AiCruit AI Job Matching Android App by Radhika Barot" 
+                    title="AiCruit AI Resume & Job Matching Mobile App - Radhika Barot"
+                    width="640"
+                    height="400"
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="portfolio-modern-card-body">
                 <div class="portfolio-badge-top">
@@ -894,14 +1005,20 @@
           <div class="about-grid">
             <div class="about-photo-wrapper reveal-fade-up">
               <div class="about-photo-frame" id="about-profile-card">
-                <img 
-                  src="assets/images/Radhika_barot.jpeg" 
-                  alt="Radhika Barot - Digital Marketer, Coder & Video Editor in Ahmedabad" 
-                  title="Radhika Barot | Digital Marketer, Coder & Video Editor in Ahmedabad"
-                  class="about-photo-img" 
-                  loading="lazy" 
-                  id="about-photo"
-                />
+                <picture>
+                  <source srcset="assets/images/Radhika_barot.webp" type="image/webp" />
+                  <img 
+                    src="assets/images/Radhika_barot.jpeg" 
+                    alt="Radhika Barot - Digital Marketer, Coder & Video Editor in Ahmedabad" 
+                    title="Radhika Barot | Digital Marketer, Coder & Video Editor in Ahmedabad"
+                    class="about-photo-img" 
+                    width="480"
+                    height="640"
+                    loading="lazy" 
+                    decoding="async"
+                    id="about-photo"
+                  />
+                </picture>
                 <div class="about-photo-badge">
                   <div>
                     <div class="about-photo-badge-name">Radhika Barot</div>
@@ -1393,7 +1510,7 @@
     <!-- Success & Alert Toast Notification Container -->
     <div id="toast-container" class="toast-container" aria-live="polite" role="region" aria-label="Notifications"></div>
 
-    <!-- Main JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- Main Optimized JavaScript -->
+    <script defer src="js/script.min.js"></script>
   </body>
 </html>

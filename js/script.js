@@ -45,27 +45,29 @@ function initPreloader() {
   const tagMarket = document.getElementById('preload-tag-market');
   const tagCreate = document.getElementById('preload-tag-create');
 
-  if (bar) bar.style.width = '30%';
+  if (bar) bar.style.transform = 'scaleX(0.35)';
 
   setTimeout(() => {
     if (tagCode) tagCode.classList.add('active');
-    if (bar) bar.style.width = '65%';
-  }, 350);
+    if (bar) bar.style.transform = 'scaleX(0.65)';
+  }, 180);
 
   setTimeout(() => {
     if (tagMarket) tagMarket.classList.add('active');
-    if (bar) bar.style.width = '85%';
-  }, 700);
+    if (bar) bar.style.transform = 'scaleX(0.85)';
+  }, 360);
 
   setTimeout(() => {
     if (tagCreate) tagCreate.classList.add('active');
-    if (bar) bar.style.width = '100%';
-  }, 1050);
+    if (bar) bar.style.transform = 'scaleX(1)';
+  }, 540);
 
   setTimeout(() => {
     preloader.classList.add('preloader-hidden');
-    setTimeout(() => preloader.remove(), 650);
-  }, 1450);
+    setTimeout(() => {
+      try { preloader.remove(); } catch (e) {}
+    }, 550);
+  }, 750);
 }
 
 /* ==================================================

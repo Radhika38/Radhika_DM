@@ -265,12 +265,12 @@ body.cursor-video .custom-cursor-circle {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
 }
 
 #preloader.preloader-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 
@@ -320,11 +320,13 @@ body.cursor-video .custom-cursor-circle {
 }
 
 .preloader-bar {
-  width: 0%;
+  width: 100%;
   height: 100%;
   background: var(--red);
-  box-shadow: 0 0 10px var(--red-glow);
-  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 /* ==================================================
@@ -848,17 +850,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-eyebrow-dot {
+  position: relative;
   width: 8px;
   height: 8px;
   background: var(--red);
   border-radius: 50%;
-  animation: pulseDot 2s infinite;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
-@keyframes pulseDot {
-  0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(255,43,43,0.7); }
-  70% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 0 8px rgba(255,43,43,0); }
-  100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(255,43,43,0); }
+.hero-eyebrow-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--red);
+  opacity: 0.6;
+  animation: pulse-red-composited 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@keyframes pulse-red-composited {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 
 .hero-headline {
@@ -2195,12 +2220,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reel-badge-dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--red);
-  box-shadow: 0 0 8px var(--red);
-  animation: pulse-dot 2s infinite ease-in-out;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.reel-badge-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--red);
+  opacity: 0.6;
+  animation: pulse-red-composited 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .reel-action-btn {
@@ -4084,6 +4122,12 @@ body:has(.thankyou-wrapper) {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: #0F0F14;
+}
+
+.portfolio-img-box picture,
+.hero-portrait-inner picture,
+.about-photo-frame picture {
+  display: contents;
 }
 
 .portfolio-img-box img {
